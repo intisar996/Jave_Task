@@ -2,10 +2,10 @@ public class DigitCounter {
     public static  void main(String[] args) {
 
         //Declare and initialize the  variables
-        int number = 123456;
-        int count = 0;
-        int orginalNumber = number;
-        int digit = 0;
+        Integer number = 123456;
+        Integer count = 0;
+        Integer orginalNumber = number;
+        Integer digit = 0;
 
 
          while(number > 0) {

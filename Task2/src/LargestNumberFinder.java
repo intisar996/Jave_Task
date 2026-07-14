@@ -4,8 +4,8 @@ public class LargestNumberFinder {
 
     public static  void main(String[] args) {
         // Declare and initialize variables
-     int number;
-     int largest =0;
+        Integer number;
+        Integer largest =0;
 
         // create array list to store number for user
         ArrayList<Integer> ListNumber = new ArrayList<>();

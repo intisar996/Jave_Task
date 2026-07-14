@@ -2,10 +2,10 @@ public class EvenOddCounter {
 
     public static  void main(String[] args) {
        //Declare and initialize the variables
-      int start =1;
-      int end  =5;
-      int evenCount = 0;
-      int oddCount = 0;
+        Integer start =1;
+        Integer end  =5;
+        Integer evenCount = 0;
+        Integer oddCount = 0;
 
 
       // use for loop  and if condition to check even or odd

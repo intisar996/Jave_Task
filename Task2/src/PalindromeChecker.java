@@ -2,10 +2,10 @@ public class PalindromeChecker {
 
     public static void main(String[] args ) {
 
-      int number = 1221;
-      int originalNumber = 1221;
-      int reversedNumber  = 0;
-      int digit = 0;
+        Integer number = 1221;
+        Integer originalNumber = 1221;
+        Integer reversedNumber  = 0;
+        Integer digit = 0;
 
       while (number > 0) {
           //get last number
@@ -17,7 +17,7 @@ public class PalindromeChecker {
           number = number /10;
       }
         //check if number is palindrome
-        if(reversedNumber == originalNumber) {
+        if(reversedNumber.equals(originalNumber) ) {
             System.out.print("The number is a palindrome");
         }else {
             System.out.print("The number is not a palindrome");

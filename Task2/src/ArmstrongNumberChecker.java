@@ -4,12 +4,12 @@ public class ArmstrongNumberChecker {
     public static  void main(String[] args) {
 
         //Declare and initialize the variables
-        int number =153;
-        int original =number;
-        int digit = 0;
-        int sum =0;
-        int count = 0;
-        int temp = number;
+        Integer number =153;
+        Integer original =number;
+        Integer digit = 0;
+        Integer sum =0;
+        Integer count = 0;
+        Integer temp = number;
 
         // count how many digit in number
          while(temp > 0 ) {
@@ -22,12 +22,12 @@ public class ArmstrongNumberChecker {
              // extract number
             digit = number % 10;
            // sum + muli pow
-            sum += Math.pow(digit,count);
+            sum += (int)Math.pow(digit,count);
             // remove number
             number = number /10;
         }
         /* check condiotn */
-           if(sum == original) {
+           if(sum.equals(original) ) {
                System.out.println("The number is an Armstrong number");
            }
 

@@ -3,9 +3,9 @@ public class FibonacciSequence {
     public static  void main(String[] args) {
 
         //Declare and initialize the  variables
-        int first = 0;
-        int second = 1;
-        int next = 0;
+        Integer first = 0;
+        Integer second = 1;
+        Integer next = 0;
 
         // print first + second number
         System.out.print(first + " ");

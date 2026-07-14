@@ -2,10 +2,10 @@ public class NumberReversal {
 
     public static void main(String[] args ) {
 
-        int number = 12345;
-        int original = number;
-        int reversedNumber = 0;
-        int digit =0;
+        Integer number = 12345;
+        Integer original = number;
+        Integer reversedNumber = 0;
+        Integer digit =0;
 
          //Use a loop to reverse the digits  number
         while(number > 0) {

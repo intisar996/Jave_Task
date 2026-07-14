@@ -3,9 +3,9 @@ public class MultiplicationCalculator {
     public static  void main(String[] args) {
 
         //Declare and initialize the variables
-        int start =1;
-        int end  =5;
-        int result = 1;
+        Integer start =1;
+        Integer end  =5;
+        Integer result = 1;
 
 
         // Multiply all numbers from start to end
