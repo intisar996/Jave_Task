@@ -2,23 +2,23 @@ public class StudentGradeCalculator {
 
     public static  void main(String[] args) {
 
-        double grade1 = 85;
-        double grade2 = 90;
-        double grade3 = 90;
-        double average = 0.0;
-        String status ="";
+        Double grade1 = 85.0;
+        Double grade2 = 90.0;
+        Double grade3 = 90.0;
+        Double average = 0.0;
+        StringBuilder status = new StringBuilder();
 
 
         average = (grade1 + grade2 + grade3) / 3;
 
         if(average >= 90) {
-            status = "Excellent";
+            status.append("Excellent");
         }else if(average >= 75 ) {
-            status = " Good";
+            status.append("Good");
         }else if (average >=60) {
-            status = "Pass";
+            status.append("Pass");
          }else {
-        status = "Fail";
+        status.append("Fail");
     }
 
          System.out.println("grades : " + grade1);
