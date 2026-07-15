@@ -24,36 +24,36 @@ public class TriangleCalculator {
     // Methods
 
     // Calculate area
-    public int Cal_Area() {
+    public int calculateArea() {
          area = (base * height) / 2;
          return area;
     }
     // calculate Perimeter
-    public int cal_Perimeter(){
+    public int calculatePerimeter(){
         Perimeter = length1 + length2 + length3;
         return Perimeter;
     }
 
     //
-    public String Tringle_Type() {
+    public String triangleType() {
          if(length1.equals(length2) && length2.equals(length3)){
              return "Equilateral Triangle";
-         }else if(length1.equals(length2) || length2.equals(length3)) {
+         }else if(length1.equals(length2) || length2.equals(length3) ||  length1.equals(length3)) {
              return  "Isosceles Triangle";
          }else {
              return "Scalene Triangle";
          }
     }
 
-    public int get_base() {
+    public Integer get_base() {
          return  base;
     }
 
-    public int get_Height() { return height; }
+    public Integer get_Height() { return height; }
 
-    public int get_Length1() {return  length1;}
-    public int get_Length2() {return  length2;}
-    public int get_Length3() {return  length3;}
-    public int get_Area() {return  area;}
-    public int get_Perimeter() {return  Perimeter;}
+    public Integer get_Length1() {return  length1;}
+    public Integer get_Length2() {return  length2;}
+    public Integer get_Length3() {return  length3;}
+    public Integer get_Area() {return  area;}
+    public Integer get_Perimeter() {return  Perimeter;}
 }
