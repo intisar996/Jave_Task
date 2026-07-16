@@ -1,6 +1,26 @@
 import java.util.Scanner;
 
-public class CircleCalculator {
+public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+    System.out.println("enter radius");
+    Double radius = Double.parseDouble(input.nextLine());
+
+    if (radius <= 0) {
+        System.out.println("Invalid radius. Radius must be greater than zero.");
+    }else {
+        CircleCalculator c = new CircleCalculator(radius);
+        c.calculate();
+
+
+        System.out.println("Radius: " + c.getRadius());
+        System.out.println("Area: " + c.getArea());
+        System.out.println("Circumference: " + c.getCircumference());
+        System.out.println("Classification: " + c.classify());
+    }
+    input.close();
+}
+
+public static class CircleCalculator {
 
     // attributes
     Double pi = 3.14;

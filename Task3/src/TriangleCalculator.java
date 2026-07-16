@@ -1,4 +1,49 @@
-public class TriangleCalculator {
+public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+
+    System.out.println("Enter base");
+     Integer base = Integer.parseInt(input.nextLine());
+
+    Scanner InputHeight = new Scanner(System.in);
+    System.out.println("Enter Height");
+    Integer height = Integer.parseInt(InputHeight.nextLine());
+
+    Scanner Inputlength1 = new Scanner(System.in);
+    System.out.println("Enter Length side 1");
+    Integer length1 = Integer.parseInt(Inputlength1.nextLine());
+
+    Scanner Inputlength2 = new Scanner(System.in);
+    System.out.println("Enter Length side 2");
+    Integer length2 = Integer.parseInt(Inputlength2.nextLine());
+
+    Scanner Inputlength3 = new Scanner(System.in);
+    System.out.println("Enter Length side 3");
+    Integer length3 = Integer.parseInt(Inputlength3.nextLine());
+
+
+    if(base <= 0 || height <= 0 || length1 <= 0 || length2 <= 0 ||length3 <= 0){
+       System.out.println("Invalid input. All values must be greater than zero");
+    }else {
+
+        TriangleCalculator triangleCalculator = new TriangleCalculator(base,height,length1,length2,length3);
+        triangleCalculator.calculateArea();
+        triangleCalculator.calculatePerimeter();
+
+        System.out.println("Base: " + triangleCalculator.get_base());
+        System.out.println("Height: " + triangleCalculator.get_Height());
+        System.out.println("Length side 1: " + triangleCalculator.get_Length1());
+        System.out.println("Length side 2: " + triangleCalculator.get_Length2());
+        System.out.println("Length side 3: " + triangleCalculator.get_Length3());
+        System.out.println("Area: " + triangleCalculator.get_Area());
+        System.out.println("Perimeter: " + triangleCalculator.get_Perimeter());
+        System.out.println("Triangle Type: " + triangleCalculator.triangleType());
+    }
+
+    input.close();
+}
+
+
+public static class TriangleCalculator {
 
 
     // Declare var
