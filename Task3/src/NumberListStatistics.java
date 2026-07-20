@@ -25,68 +25,120 @@ public static void main(String[] args) {
             System.out.println(e);
         }
 
-
     }
-    System.out.println("List Number" + numberListStatistics.getNumbers());
-    System.out.println("Total Sum Of Number" + numberListStatistics.totalSum());
-    System.out.println("Even Number" + numberListStatistics.evenNumber());
-//    System.out.println("List Number" + numberListStatistics.getNumbers());
-//    System.out.println("List Number" + numberListStatistics.getNumbers());
-//    System.out.println("List Number" + numberListStatistics.getNumbers());
-//    System.out.println("List Number" + numberListStatistics.getNumbers());
 
+    Integer[] result = numberListStatistics.largestSmallestNumber();
+
+    System.out.println("List Number : " + numberListStatistics.getNumbers());
+    System.out.println("Total Sum Of Number : " + numberListStatistics.totalSum());
+    System.out.println("Even Number : " + numberListStatistics.sumEven());
+    System.out.println("Odd Number : " + numberListStatistics.sumOdd());
+    System.out.println("Positive Number : " + numberListStatistics.sumPositive());
+    System.out.println("Negative Number : " + numberListStatistics.sumNegative());
+    System.out.println("Average  : " + numberListStatistics.calculateAverage());
+    System.out.println("Largest Number  : " + result[0]);
+    System.out.println("Smallest Number  : " + result[1]);
 }
-
-
-
-
 
 
 public static class NumberListStatistics {
 
-
     //Attributes
+    public ArrayList<Integer> numbers;
+    Integer largest = 0;
+    Integer smallest = 0;
 
-     public ArrayList<Integer> numbers;
-     Integer sum = 0;
-
-
-     // Constructor
+    // Constructor
     NumberListStatistics() {
         numbers = new ArrayList<>();
     }
 
-
     //Methods
 
     // add numbers to list
-    public boolean addNumbers(Integer number){
-            numbers.add(number);
-            return true;
+    public boolean addNumbers(Integer number) {
+        numbers.add(number);
+        return true;
     }
 
     // list number
-    public ArrayList<Integer> getNumbers(){
-        return  numbers;
+    public ArrayList<Integer> getNumbers() {
+        return numbers;
     }
 
     // Sum All number
     public Integer totalSum() {
-        for(Integer n : numbers){
+        Integer sum = 0;
+        for (Integer n : numbers) {
             sum += n;
         }
         return sum;
     }
 
-    //Count of even numbers
- public Integer evenNumber() {
-     int sumEven = 0;
-     for (Integer n : numbers) {
-         if (n % 2 == 0) {
-             sumEven += n;
-         }
-     }
-     return sumEven;
- }
+    // Average
+    public Double calculateAverage() {
+         Double average = 0.0;
+         average =(double)(totalSum()) / (numbers.size());
+         return  average;
+    }
+
+    //Count of even and odd numbers
+    public Integer sumNUmber(boolean even) {
+        int sum = 0;
+        for (Integer n : numbers) {
+            if ((n % 2 == 0) == even) {
+                sum += n;
+            }
+        }
+        return sum;
+    }
+
+    // even number
+    public Integer sumEven() {
+        return sumNUmber(true);
+    }
+
+    // odd number
+    public Integer sumOdd() {
+        return sumNUmber(false);
+    }
+
+    //Count odd or positive number
+    public Integer sumNumberType(boolean pos) {
+        int sum = 0;
+        for(Integer n : numbers) {
+            if((n > 0) == pos){
+                sum += n;
+            }
+        }
+        return sum;
+    }
+
+      // positive number
+    public Integer sumPositive(){
+        return sumNumberType(true);
+    }
+
+    // negative number
+    public Integer sumNegative(){
+        return sumNumberType(false);
+    }
+
+    // Largest
+
+    public Integer[] largestSmallestNumber() {
+        for(Integer n : numbers) {
+            largest = numbers.getFirst();
+            smallest = numbers.getFirst();
+            if(n > largest) {
+                largest = n;
+            }
+
+            if( n < smallest) {
+                smallest = n;
+            }
+        }
+          return new Integer[] {largest,smallest};
+    }
 
 }
