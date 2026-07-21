@@ -103,6 +103,28 @@ public  class ArrayDataAnalyzer {
         System.out.println("Enter new value :" + newNumber);
         System.out.println("Updated Array :  " + Arrays.toString(numbers));
 
+
+
+
+        // 7. Reverse Array
+
+        int[] copyNumbers = Arrays.copyOfRange(numbers,0,4);
+        int[] reverse = new int[copyNumbers.length];
+
+        System.out.println("Original :" + Arrays.toString(copyNumbers));
+        for(int i = copyNumbers.length - 1; i >= 0 ; i--){
+             reverse[i] = copyNumbers[copyNumbers.length -1 - i];
+        }
+        System.out.println(" Reverse :" + Arrays.toString(reverse));
+
+        //8. Sorting and Comparison
+
+        int[] copynum = Arrays.copyOf(numbers,numbers.length);
+        Arrays.sort(copynum);
+        System.out.println("Sort :" + Arrays.toString(copynum));
+        System.out.println("original  :" + Arrays.toString(numbers));
+        System.out.println("Smallest value :" + Arrays.stream(numbers).min().getAsInt());
+        System.out.println("Largest value  :" + (Arrays.stream(numbers).max().getAsInt()));
         input.close();
 
 
