@@ -39,8 +39,43 @@ public class ArrayListProductInventoryManagementSystem {
         Scanner input = new Scanner(System.in);
         System.out.println("enter product name");
         String name = input.nextLine();
+            for(int i = 0; i < productNames.size(); i++){
+                if (productNames.get(i).contains(name)) {
+                    System.out.println("product quantity :" + productQuantities.get(i));
+                    System.out.println("product price : " + productPrices.get(i));
+                }
+            }
 
-        System.out.println("enter product quantity");
+    // 4. Update Product Information
+
+        System.out.println("enter product index");
+        Integer index = input.nextInt();
+        input.nextLine();
+        for(Integer i = 0; i < productNames.size(); i++){
+            if (i.equals(index)) {
+                System.out.println("enter Product name To update");
+                String upname = input.nextLine();
+                productNames.set(i,upname);
+                System.out.println("New Product Name :" + upname);
+                System.out.println("enter Product quantity To update");
+                Integer upquantity = input.nextInt();
+                productQuantities.set(i,upquantity);
+                System.out.println("New Product Quantity :" + upquantity);
+                System.out.println("enter Product price To update");
+                Double upprice = input.nextDouble();
+                productPrices.set(i, upprice);
+                System.out.println("New Product Price :" + upprice);
+              }
+            }
+
+        for(int i =0; i < productNames.size();i++) {
+            System.out.println("Product :" + i);
+            System.out.println("Name :" + productNames.get(i));
+            System.out.println("Quantity :" + productQuantities.get(i));
+            System.out.println("Price :" + productPrices.get(i));
+
+        }
+
 
 
     }
