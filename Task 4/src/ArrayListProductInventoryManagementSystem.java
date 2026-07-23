@@ -51,8 +51,11 @@ public class ArrayListProductInventoryManagementSystem {
         System.out.println("enter product index");
         Integer index = input.nextInt();
         input.nextLine();
+
+        int saveI = 0;
         for(Integer i = 0; i < productNames.size(); i++){
             if (i.equals(index)) {
+                saveI = i;
                 System.out.println("enter Product name To update");
                 String upname = input.nextLine();
                 productNames.set(i,upname);
@@ -68,15 +71,44 @@ public class ArrayListProductInventoryManagementSystem {
               }
             }
 
-        for(int i =0; i < productNames.size();i++) {
-            System.out.println("Product :" + i);
-            System.out.println("Name :" + productNames.get(i));
-            System.out.println("Quantity :" + productQuantities.get(i));
-            System.out.println("Price :" + productPrices.get(i));
+            System.out.println("UPDATED Product index :" + saveI);
+            System.out.println("UPDATED Name :" + productNames.get(saveI));
+            System.out.println("UPDATED Product  Quantity :" + productQuantities.get(saveI));
+            System.out.println("UPDATED Product  Price :" + productPrices.get(saveI));
+
+           //6. Stock Analysis
+
+        Integer totaloqty = 0;
+        Double totaloinventory  = 0.0;
+        for(int i = 0; i < productQuantities.size(); i++){
+            totaloqty += productQuantities.get(i);
+            totaloinventory += productQuantities.get(i) * productPrices.get(i);
+
+        }
+        System.out.println("Total Products :" + productNames.size());
+        System.out.println("Total Quantity :" + totaloqty);
+        System.out.println("Inventory Value :" + totaloinventory);
+
+
+        // 7. Stock Status Checking
+
+        for(int i = 0; i < productQuantities.size(); i++){
+            if(productQuantities.get(i) < 5) {
+                System.out.println(productNames.get(i) +  "  low stock");
+            } else if (productQuantities.get(i) == 0){
+                System.out.println(productNames.get(i) +  "  out of stock");
+            }else {
+                System.out.println(productNames.get(i) +  "  available stock");
+            }
 
         }
 
 
+        // 8. Remove Product
+
+
 
     }
+
+
 }
