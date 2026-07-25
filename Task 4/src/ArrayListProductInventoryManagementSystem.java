@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class ArrayListProductInventoryManagementSystem {
@@ -105,7 +107,23 @@ public class ArrayListProductInventoryManagementSystem {
 
 
         // 8. Remove Product
+        System.out.println("Enter Index to remove Product");
+        int removeproduct = input.nextInt();
 
+            if(removeproduct < productNames.size() ) {
+                productQuantities.remove(removeproduct);
+                productNames.remove(removeproduct);
+                productPrices.remove(removeproduct);
+                System.out.println("Product removed successfully.");
+            }else {
+                System.out.println("Product Not Found");
+            }
+
+
+            //9. Sorting Products
+
+        Collections.sort(productNames);
+        System.out.println("Sorted Product Names" + productNames);
 
 
     }
