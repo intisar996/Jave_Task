@@ -9,9 +9,15 @@ public class FilePathSplitter {
         // input to get file name from user
         IO.readln("enter file name");
         String fileName = input.next();
-
+        // check if fileName Invalid path
         if(fileName.isBlank()){
             System.out.println("Invalid path.");
         }
+
+        if(fileName.contains(""\\"")){
+            fileName.replace("\/", "/");
+        }
+
+
     }
     }
