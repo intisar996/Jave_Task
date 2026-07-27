@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Bank_Transaction {
+public class BankTransactionManagementSystemUsingArrayList {
     void main(String[] args){
 
         //1. Create Account Data Lists
