@@ -16,7 +16,8 @@ public class UndoActionManager {
         if (input.hasNextInt()) {
             numOfactions = input.nextInt();
         } else {
-            System.out.println("Invalid input");
+            System.out.println("Invalid input. Please enter an integer.");
+            return;
         }
         // check number of book
         if (numOfactions <= 0) {
