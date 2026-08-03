@@ -7,7 +7,7 @@ public  class SmartParkingGarage {
     static String platinum = "";
     static Queue<String> waitingVehicles = new LinkedList<>();
     static Deque<String> parkedVehicles = new ArrayDeque<>();
-    static Integer capacity = 3;
+    static Integer capacity = 10;
     static Integer totalParkedCounter = 0;
     static Integer totalWaitingCounter = 0;
     static Integer departedcounter = 0;
