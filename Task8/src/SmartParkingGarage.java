@@ -26,6 +26,7 @@ public  class SmartParkingGarage {
                 System.out.println("vehicle already exists");
             }else {
                 parkedVehicles.push(platinum);
+                totalParkedCounter++;
             }
         }else{
             // add to waiting list
@@ -188,6 +189,7 @@ public  class SmartParkingGarage {
     public static void  parkVehicle() {
         if(waitingVehicles.isEmpty()){
             System.out.println("no car in waiting list");
+            return;
         }
         if(parkedVehicles.size() < capacity) {
             String removeFirstVehicle = waitingVehicles.poll();
@@ -202,17 +204,25 @@ public  class SmartParkingGarage {
 
     //removeVehicle()
     public static void  removeVehicle() {
-        if(!parkedVehicles.isEmpty()){
+
+        if (parkedVehicles.isEmpty()) {
+            System.out.println("No parked vehicles.");
+            return;
+        }
             String removedVehicle =   parkedVehicles.pop();
             departedcounter++;
             // next waiting
+        if (!waitingVehicles.isEmpty()) {
             String next = waitingVehicles.poll();
-            // add car to parking
             parkedVehicles.push(next);
-            System.out.println("parkedVehicles " + parkedVehicles);
-            System.out.println("waitingVehicles " + waitingVehicles);
-
+            totalParkedCounter++;
         }
+            // add car to parking
+        System.out.println("Removed vehicle: " + removedVehicle);
+        System.out.println("Parked vehicles: " + parkedVehicles);
+        System.out.println("Waiting vehicles: " + waitingVehicles);
+
+
 
     }
 
